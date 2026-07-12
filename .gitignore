@@ -1,0 +1,29 @@
+# Dependencies
+node_modules/
+__pycache__/
+*.pyc
+*.pyo
+.venv/
+venv/
+
+# Build artifacts
+frontend/dist/
+backend/build/
+src-tauri/binaries/moneymaker-sidecar*
+src-tauri/target/
+src-tauri/gen/
+src-tauri/icons/*.ico
+src-tauri/icons/*.icns
+
+# IDE
+.vscode/
+.idea/
+*.swp
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Runtime
+*.db
+sidecar.port

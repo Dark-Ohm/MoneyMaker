@@ -1,0 +1,42 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-terminal-bg text-gray-100 antialiased;
+    font-family: "JetBrains Mono", "Fira Code", monospace;
+  }
+}
+
+@layer components {
+  .ticker-card {
+    @apply bg-terminal-surface border border-terminal-border rounded-lg p-4 transition-all duration-300;
+  }
+  .ticker-card:hover {
+    @apply border-terminal-accent/50;
+  }
+  .status-dot {
+    @apply w-2.5 h-2.5 rounded-full animate-pulse;
+  }
+  .status-dot.connected {
+    @apply bg-terminal-green;
+  }
+  .status-dot.disconnected {
+    @apply bg-terminal-red;
+  }
+  .status-dot.connecting {
+    @apply bg-terminal-yellow;
+  }
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #111827;
+}
+::-webkit-scrollbar-thumb {
+  background: #334155;
+  border-radius: 3px;
+}

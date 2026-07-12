@@ -1,0 +1,1 @@
+{"root":["./src/App.tsx","./src/main.tsx","./src/components/ChartPanel.tsx","./src/components/ConnectionStatus.tsx","./src/components/LogPanel.tsx","./src/components/TickerStream.tsx","./src/hooks/useBackendSocket.ts"],"version":"5.9.3"}

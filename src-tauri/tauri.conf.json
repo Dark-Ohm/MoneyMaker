@@ -1,0 +1,61 @@
+{
+  "$schema": "https://raw.githubusercontent.com/nicegui-dev/nicegui/main/tauri-conf-schema.json",
+  "productName": "MoneyMaker",
+  "version": "0.1.0",
+  "identifier": "com.moneymaker.terminal",
+  "build": {
+    "frontendDist": "../frontend/dist",
+    "devUrl": "http://localhost:1420",
+    "beforeDevCommand": "",
+    "beforeBuildCommand": ""
+  },
+  "app": {
+    "windows": [
+      {
+        "title": "MoneyMaker Terminal",
+        "width": 1400,
+        "height": 900,
+        "minWidth": 1000,
+        "minHeight": 600,
+        "resizable": true,
+        "decorations": true,
+        "transparent": false
+      }
+    ],
+    "security": {
+      "csp": "default-src 'self'; connect-src 'self' ws://127.0.0.1:* http://127.0.0.1:*; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline'"
+    }
+  },
+  "bundle": {
+    "active": true,
+    "targets": "all",
+    "icon": [
+      "icons/32x32.png",
+      "icons/128x128.png",
+      "icons/128x128@2x.png"
+    ],
+    "externalBin": [
+      "binaries/moneymaker-sidecar"
+    ],
+    "resources": [],
+    "windows": {
+      "webviewInstallMode": { "type": "embedBootstrapper" }
+    },
+    "linux": {
+      "deb": { "depends": ["libwebkit2gtk-4.1-dev"] }
+    }
+  },
+  "plugins": {
+    "shell": {
+      "open": true,
+      "scope": [
+        {
+          "name": "sidecar",
+          "cmd": "binaries/moneymaker-sidecar",
+          "args": true,
+          "sidecar": true
+        }
+      ]
+    }
+  }
+}
